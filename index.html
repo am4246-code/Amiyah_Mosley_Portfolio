@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amiyahmosley.com</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="portfolio-container">
+        <header class="main-header">
+            <h1>Amiyah's Archives</h1>
+            <p class="subtitle"> Engineering Technology Major @ NJIT| Apsiring Software Developer or IT Technician </p>
+        </header>
+
+        <section class="about-section">
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQG7Ikv6NTxRYw/profile-displayphoto-crop_800_800/B4EZ4bJaX4H0AM-/0/1778571915911?e=1781136000&v=beta&t=vN49W8FtPaWc8FfN2TAEKzEGIWaYHP3PsSXX17jn_rA" class="about-icon">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>
+                    Welcome! I'm Amiyah Mosley, an Engineering Technology Major at NJIT with a passion for software development as well as pursuing a career in the IT Industry. This portfolio is inspired by my love for 90s R&B and showcases how I combine creative ideas with my technical skills. If you want to learn more about me, go ahead and <a href="about.html">click here!</a>
+                    <br><br>
+                    My collection will keep growing as I continue to make projects in and out of the classroom. Feel free to pull out a vinyl and check out my work!
+                </p>
+                <div class="contact-info">
+                    <a href="mailto:amimosley97@gmail.com">amimosley97@gmail.com</a> | 
+                    <a href="https://github.com/am4246-code" target="_blank" rel="noopener noreferrer">GitHub</a> | 
+                    <a href="https://www.linkedin.com/in/amiyah-mosley-75171b359" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+               </div>
+            </div>
+        </section>
+
+        <section class="project-details" id="project-details-container">
+            <h2 id="project-title">Now Playing</h2>
+            <p id="project-description">
+                Select a record from the collection below to see the project details.
+            </p>
+            <div id="project-tech-stack" class="tech-stack"></div>
+            <div id="project-links" class="project-links"></div>
+        </section>
+
+        <div class="main-grid-container">
+            <div class="left-column">
+                <div class="record-crate" id="my-collection">
+                    <h2>My Collection (Websites and Software)</h2>
+                    <div class="project-list" id="project-list-container"></div>
+                </div>
+            </div>
+            <div class="right-column"> <!-- This column will now just hold the turntable -->
+                <div class="turntable-wrapper">
+                    <div class="music-notes" id="music-notes">
+                        <span>&#9835;</span> <!-- Musical Note -->
+                        <span>&#9833;</span> <!-- Quarter Note -->
+                        <span>&#9834;</span> <!-- Eighth Note -->
+                        <span>&#9835;</span> <!-- Musical Note -->
+                        <span>&#9834;</span> <!-- Eighth Note -->
+                    </div>
+                    <div class="turntable" id="turntable">
+                        <div class="platter">
+                            <div class="vinyl" id="vinyl-record">
+                                <div class="label">
+                                    <img id="vinyl-label-img" src="assets/514029_solid_color_background_icolorpalette.png" alt="Vinyl Label">
+                                </div>
+                                <div class="spindle"></div>
+                            </div>
+                        </div>
+                        <div class="tonearm"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scrpit.js"></script>
+</body>
+</html>

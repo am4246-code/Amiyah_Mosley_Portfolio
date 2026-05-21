@@ -1,0 +1,657 @@
+/* --- Basic Setup & Typography --- */
+:root {
+    /* 
+    You will need to add the Kirsty font files to your project 
+    and update the src url() path below.
+    @font-face {
+        font-family: 'Kirsty';
+        src: url('path/to/your/kirsty-font-file.woff2') format('woff2');
+    }
+    */
+    /* Palette from nnn.jpg */
+    --background-color: #0d1b2a; /* Deep Night Blue */
+    --primary-text: #e0e1dd; /* Off-white */
+    --accent-color: #432316; /* Vibrant Gold/Orange */
+    --highlight-color: #432316; /* Muted Red */
+    --wood-color: #221c1a;
+    --metal-color: #c0c0c0; /* Silver for metal parts */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-image: url('assets/download (3).jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--primary-text);
+    font-family: 'Kirsty', cursive;
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+h1, h2 {
+    font-family: 'Kirsty', cursive;
+    letter-spacing: 1px;
+    color: white;
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: white;
+}
+
+/* --- Title Banner Styling --- */
+.about-section h2,
+.main-header h1,
+.project-details h2,
+.record-crate h2,
+.inspirations-section h2,
+.track-section h2,
+.artists-section h2,
+.family-section h2 {
+    background-color: var(--accent-color);
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 3rem; /* Increased horizontal padding to widen the titles */
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-shadow: none;
+}
+
+.project-details h2::before {
+    left: 10px;
+}
+
+.project-details h2::after {
+    right: 10px;
+}
+
+.project-details h2::before,
+.project-details h2::after {
+    content: '\266B'; /* Beamed sixteenth notes character */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem; /* Increased size to be proportional to the title banner */
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+/* Animation for the music notes */
+.project-details h2.animate-notes::before,
+.project-details h2.animate-notes::after {
+    animation: note-hop 0.5s ease-in-out;
+}
+
+@keyframes note-hop {
+    0% {
+        transform: translateY(-50%) scale(1);
+    }
+    50% {
+        transform: translateY(-70%) scale(1.1);
+    }
+    100% {
+        transform: translateY(-50%) scale(1);
+    }
+}
+
+/* --- Main Layout --- */
+.portfolio-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Changed from '0 auto' */
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; -- This is handled by child elements now */
+}
+
+/* --- New Grid Layout --- */
+.main-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.turntable-wrapper {
+    display: flex;
+    position: relative; /* Needed for positioning the music notes */
+    justify-content: center;
+    align-items: start; /* Align to the top of the grid area */
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the crate horizontally */
+    justify-content: center; /* Center the crate vertically if needed */
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 2rem; /* Reduced margin */
+}
+
+.main-header h1 {
+    font-size: 3.5rem;
+    margin: 0;
+}
+
+.main-header .subtitle {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    display: inline-block;
+    text-shadow: none;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+}
+
+/* --- About Me Section --- */
+/* This section is now on about.html, but we keep styles for it */
+.about-section {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem; /* Reduced margin */
+    text-align: left;
+    background: rgba(23, 32, 42, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(252, 163, 17, 0.3);
+}
+
+.about-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--accent-color);
+    flex-shrink: 0; /* Prevents image from shrinking */
+}
+
+.about-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.about-text {
+    text-align: center;
+}
+
+.about-text h2 {
+    margin-top: 0; /* Center the h2 title banner */
+}
+
+.back-link {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    white-space: nowrap; /* Prevents the link text from wrapping */
+}
+
+/* --- About Page Specific Title Styling --- */
+/* This rule is no longer needed as the titles are now styled as banners */
+
+.about-title-container {
+    display: flex;
+    justify-content: center; /* This can be removed if h2 is the only child */
+}
+
+/* --- Side-by-side Layout for About Page --- */
+.side-by-side-container {
+    display: flex;
+    gap: 2rem;
+    align-items: stretch; /* Make columns equal height */
+    margin-top: 3rem;
+}
+
+.side-by-side-container > section {
+    flex: 1; /* Each section takes up half the space */
+    margin-top: 0; /* Remove individual top margin */
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Inspirations Section on About Page --- */
+.inspirations-section,
+.artists-section,
+.family-section {
+    margin-top: 3rem;
+    text-align: center;
+    background: rgba(23, 32, 42, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(252, 163, 17, 0.3);
+}
+.family-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    margin-bottom: 2rem; /* Add space between text and new gallery */
+}
+
+
+.inspirations-section .hobby-text {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+.artists-section .artists-text {
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.gallery figure {
+    margin: 0;
+    width: 150px;
+    background-color: var(--wood-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery figure:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 8px 12px 20px rgba(0,0,0,0.6);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery figcaption {
+    padding: 0.75rem;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* --- Tuxie Photo Style --- */
+#tuxie-photo {
+    width: 200px; /* Make Tuxie's photo larger than the others */
+    align-self: center; /* Helps with vertical alignment in the flex container */
+}
+
+/* --- Track Section on About Page --- */
+.track-section {
+    margin-top: 3rem;
+    text-align: center;
+    background: rgba(23, 32, 42, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(252, 163, 17, 0.3);
+}
+
+.track-content {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: center; /* Center items when they wrap */
+    gap: 2rem;
+    text-align: center; /* Center text for a better look when wrapped */
+    margin: 0 auto;
+}
+
+.track-content img {
+    width: 300px;
+    border-radius: 8px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}
+
+.track-content p {
+    line-height: 1.6;
+    flex-basis: 100%; /* Allow paragraph to take full width when it wraps */
+}
+
+/* --- Turntable Styling --- */
+.turntable {
+    /* Shrunk the turntable to be more compact */
+    width: 600px;
+    height: 410px;
+    background-color: var(--wood-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.platter {
+    width: 300px; /* Adjusted size */
+    height: 300px; /* Adjusted size */
+    background-color: var(--metal-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vinyl {
+    width: 250px; /* Adjusted size */
+    height: 250px; /* Adjusted size */
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation: spin 20s linear infinite;
+    animation-play-state: paused; /* Initially paused */
+}
+
+.vinyl.playing {
+    animation-play-state: running;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.label {
+    width: 130px; /* Adjusted size */
+    height: 130px; /* Adjusted size */
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.spindle {
+    width: 8px;
+    height: 8px;
+    background-color: var(--background-color);
+    border: 2px solid var(--metal-color);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+}
+
+.tonearm {
+    width: 150px; /* Adjusted size */
+    height: 20px;
+    background-color: #ddd;
+    position: absolute;
+    top: 130px;
+    right: 90px; /* Moved closer to the vinyl */
+    border-radius: 10px 10px 0 0;
+    transform-origin: 15px 15px;
+    transform: rotate(-35deg);
+    transition: transform 1s ease-in-out;
+    z-index: 10;
+    border: 2px solid #aaa;
+}
+
+.tonearm.playing {
+    transform: rotate(10deg);
+}
+
+/* --- Music Note Animation --- */
+.music-notes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Prevents notes from interfering with clicks */
+    overflow: hidden;
+    z-index: 5; /* Ensure notes appear in front of the turntable */
+}
+
+.music-notes span {
+    position: absolute;
+    font-size: 3rem; /* Made notes even bigger */
+    color: var(--primary-text);
+    opacity: 0;
+}
+
+.music-notes.playing span {
+    animation: float-up 2.5s linear infinite;
+}
+
+/* Stagger the note animations */
+.music-notes.playing span:nth-child(1) { animation-delay: 0s; left: 40%; }
+.music-notes.playing span:nth-child(2) { animation-delay: 0.8s; left: 60%; }
+.music-notes.playing span:nth-child(3) { animation-delay: 1.6s; left: 45%; }
+.music-notes.playing span:nth-child(4) { animation-delay: 0.4s; left: 70%; }
+.music-notes.playing span:nth-child(5) { animation-delay: 1.2s; left: 30%; }
+
+@keyframes float-up {
+    0% { transform: translateY(300px); opacity: 0.7; }
+    100% { transform: translateY(50px); opacity: 0; }
+}
+
+.tonearm::after {
+    content: '';
+    position: absolute;
+    width: 25px; /* Shrunk the size */
+    height: 25px; /* Shrunk the size */
+    background-color: var(--metal-color);
+    border-radius: 50%;
+    left: 2.5px; /* Centered on the 15px transform-origin */
+    top: -2.5px; /* Centered on the 20px high tonearm */
+}
+
+/* --- Project Details --- */
+.project-details {
+    /* Styling to match .about-section */
+    margin-bottom: 2rem;
+    text-align: center;
+    background: rgba(23, 32, 42, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(252, 163, 17, 0.3);
+    min-height: auto; /* Let content define height */
+}
+
+.project-details h2 {
+    margin-top: 0;
+}
+
+.project-details p, .project-details .tech-stack, .project-details .project-links {
+    text-align: center;
+}
+
+.tech-stack {
+    margin: 1rem 0;
+}
+
+.tech-tag {
+    display: inline-block;
+    background-color: var(--highlight-color);
+    color: var(--primary-text);
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    margin: 0.2rem 0.3rem;
+}
+
+.project-links a {
+    margin-right: 1rem;
+    font-weight: bold;
+}
+
+/* --- Record Crate (Project List) --- */
+.record-crate {
+    /* Sizing to match the turntable */
+    width: 600px; /* Increased width */
+    /* height: 400px; -- Removed fixed height to allow content to define it */
+    display: flex; /* Use flexbox to control inner content */
+    flex-direction: column;
+    /* margin-bottom: 2rem; -- No longer needed as it's in the grid */
+    background: rgba(23, 32, 42, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    padding: 2rem;
+    border-radius: 8px;
+    border: 1px solid rgba(252, 163, 17, 0.3); /* Same border as about-section */
+    text-align: center;
+}
+
+.record-crate h2 {
+    font-size: 1.2rem; /* Shrink font size to fit on one line */
+}
+
+.project-list {
+    display: flex;
+    flex-wrap: nowrap; /* Keep items in a single line */
+    gap: 0;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden;
+    padding: 2rem 2rem 3rem; /* Add extra padding at the bottom for the shelf */
+    position: relative;
+    border-bottom: 25px solid #2a221f; /* The front face of the shelf */
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    scrollbar-color: var(--accent-color) var(--background-color);
+    scrollbar-width: thin;
+}
+
+.project-list::before {
+    content: '';
+    position: absolute;
+    bottom: -25px; /* Align with the top of the border-bottom */
+    left: -15px;
+    right: -15px;
+    height: 15px; /* The top surface of the shelf */
+    background-color: #4d3d37;
+    transform: skewX(-45deg);
+    transform-origin: bottom left;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.project-sleeve {
+    width: 150px;
+    height: 150px;
+    flex-shrink: 0; /* Prevent sleeves from shrinking */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+    transform: rotate(5deg); /* Slightly tilt the records */
+    margin-left: -50px; /* Overlap the records */
+}
+
+.project-list > .project-sleeve:first-child {
+    margin-left: 0; /* The first record doesn't need overlap */
+}
+
+.project-sleeve:hover {
+    transform: translateY(-25px) rotate(0deg) scale(1.05); /* Lift the record up straight */
+    z-index: 10; /* Ensure the hovered record is on top */
+}
+
+/* Custom scrollbar for a better look */
+.project-list::-webkit-scrollbar {
+    height: 8px;
+}
+.project-list::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+.project-sleeve img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.sleeve-title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px;
+    font-size: 0.9rem;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    .main-grid-container {
+        grid-template-columns: 1fr; /* Stack columns on mobile */
+    }
+    .turntable {
+        width: 300px;
+        height: 300px;
+    }
+    /* Adjustments for smaller turntable */
+    .platter { width: 600px; height: 600px; }
+    .vinyl { width: 240px; height: 240px; }
+    .label { width: 100px; height: 100px; }
+    .tonearm { width: 150px; top: 130px; }
+
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .track-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .side-by-side-container {
+        flex-direction: column;
+    }
+}
