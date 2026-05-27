@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             title: 'RollCount - Facial Attendance (completed)',
             description: 'An attendance management system for instructors that utilizes live webcam feed and facial recognition programs, like YuNet and LBPH to identify a student, mark their presence, and log it in a data chart.',
             tech: ['Python', 'OpenCV', 'dlib', 'Face Recognition'],
-            imageUrl: '', // No live demo for a desktop app
+            imageUrl: 'assets/rollcount-preview.png', // No live demo for a desktop app
             githubUrl: 'https://github.com/am4246-code/RollCount-Facial_Attendance-Taker'
         },
         {
