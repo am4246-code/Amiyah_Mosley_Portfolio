@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             id: 'project2',
-            title: 'HydroSync - Smart Irrigation (unfinished)',
+            title: 'HydroSync - Water Log/Tracker (unfinished)',
             description: 'A water intake tracker website that allows users to determine how much water they should be drinking based on factors that can affect this like age, gender, and weight. It also utilizes a tracking system that helps users track their daily and weekly water intake.',
             tech: ['TypeScript', 'React', 'Supabase','CSS', 'HTML', 'PLpgSQL'],
             imageUrl: 'assets/login.png', // Consider creating a new image for  to the web interface if applicable
